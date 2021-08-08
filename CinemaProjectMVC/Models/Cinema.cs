@@ -27,6 +27,6 @@ namespace CinemaProjectMVC.Models
 
         [Required]
         [Display(Name = "Screening Times")]
-        public string[] ScreeningTimes { get; set; }
+        public ScreeningTime ScreeningTime { get; set; }
     }
 }

@@ -29,5 +29,17 @@ namespace CinemaProjectMVC.Models
         public int DurationInMinutes { get; set; }
 
         public Rating Rating { get; set; }
+
+        public Movie() { }
+        public Movie(int id, string name, Genre genre, byte genreId, DateTime releaseDate, int durationInMinutes, Rating rating)
+        {
+            Id = id;
+            Name = name;
+            Genre = genre;
+            GenreId = genreId;
+            ReleaseDate = releaseDate;
+            DurationInMinutes = durationInMinutes;
+            Rating = rating;
+        }
     }
 }

@@ -1,0 +1,18 @@
+﻿@model CinemaProjectMVC.ViewModels.MoviesViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var movies = Model.Movies;
+}
+<h2>Movies</h2>
+
+@foreach (var movie in movies)
+{
+    <p>@movie.Name</p>
+    <p>@movie.Genre.Name</p>
+    <p>@movie.DurationInMinutes</p>
+}
+

@@ -22,3 +22,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.save-button {
+    background: #f5821e;
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.save-button:hover {
+    background: #dc751b;
+}
