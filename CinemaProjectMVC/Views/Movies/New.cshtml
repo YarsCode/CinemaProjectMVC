@@ -1,4 +1,4 @@
-﻿
+﻿@model dynamic
 @{
     ViewBag.Title = "New";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +6,7 @@
 
 <h2>New</h2>
 
+@foreach (var genre in @Model)
+            {
+<p>@genre.Name</p>
+            }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using CinemaProjectMVC.Models;
@@ -10,6 +11,18 @@ namespace CinemaProjectMVC.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         static Genre genre1 = new Genre
         {
             Id = 1,
@@ -23,12 +36,12 @@ namespace CinemaProjectMVC.Controllers
         static Rating rating1 = new Rating
         {
             Id = 1,
-            Name = "Rating 5"
+            Stars = 5
         };
         static Rating rating2 = new Rating
         {
             Id = 2,
-            Name = "Rating 4"
+            Stars = 4
         };
         IEnumerable<Genre> genres = new List<Genre>() { genre1, genre2 };
         IEnumerable<Rating> ratings = new List<Rating>() { rating1, rating2 };
@@ -75,6 +88,7 @@ namespace CinemaProjectMVC.Controllers
         // GET: Movies
         public ActionResult Index()
         {
+            var movies = _context.Movies.ToList();
             var viewModel = new MoviesViewModel()
             {
                 Movies = movies
@@ -84,19 +98,19 @@ namespace CinemaProjectMVC.Controllers
 
         public ActionResult Details(int id)
         {
-            if (id >= movies.Count)
+            var movie = _context.Movies.Include(m => m.Genre).Include(m => m.Rating).SingleOrDefault(m => m.Id == id);
+            if (movie == null)
                 return HttpNotFound();
-            var movie = movies[id];
+            //if (id >= movies.Count)
+            //    return HttpNotFound();
+            //var movie = movies[id];
             return View(movie);
         }
 
         public ActionResult New()
         {
-            var viewModel = new MoviesViewModel()
-            {
-                Movies = movies
-            };
-            return View(viewModel);
+            var genres = _context.Genres.ToList();
+            return View(genres);
         }
     }
 }

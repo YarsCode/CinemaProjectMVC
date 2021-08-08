@@ -30,9 +30,9 @@
         @Html.ValidationMessageFor(m => m.DurationInMinutes)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Rating.Name)
-        @Html.TextBoxFor(m => m.Rating.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Rating.Name)
+        @Html.LabelFor(m => m.Rating.Stars)
+        @Html.TextBoxFor(m => m.Rating.Stars, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Rating.Stars)
     </div>
     @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken()
