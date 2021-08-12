@@ -1,4 +1,8 @@
-﻿body {
+﻿* {
+    font-family: 'Manrope', sans-serif;
+    font-size: large;
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -23,7 +27,9 @@ textarea {
     max-width: 280px;
 }
 
-.save-button {
+.button {
+    color: black;
+    text-decoration: none;
     background: #f5821e;
     border: none;
     padding: 8px 20px;
@@ -31,6 +37,32 @@ textarea {
     border-radius: 3px;
 }
 
-.save-button:hover {
+.button:hover {
+    color: black;
+    text-decoration: none;
     background: #dc751b;
+}
+
+thead th {    
+    color: #ff9940;
+    background: #484a49;
+}
+
+tbody td {
+    background: #dedede;
+}
+
+tbody a {
+    padding: 5px;
+    color: #f5821e;
+}
+
+.field-validation-error,
+label.error {
+    color: red;
+}
+
+.input-validation-error,
+input.error {
+    border: 2px solid red;
 }

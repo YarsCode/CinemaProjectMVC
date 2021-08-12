@@ -21,12 +21,42 @@ namespace CinemaProjectMVC.Models
         [Display(Name = "Total Seats")]
         public int TotalSeats { get; set; }
 
-        [Required]
-        [Display(Name = "Available Seats")]
-        public int AvailableSeats { get; set; }
+        public OpeningHour OpeningHour { get; set; }
 
         [Required]
-        [Display(Name = "Screening Times")]
-        public ScreeningTime ScreeningTime { get; set; }
+        [Display(Name = "Opens At")]
+        public byte OpeningHourId { get; set; }
+
+        public ClosingHour ClosingHour { get; set; }
+
+        [Required]
+        [Display(Name = "Closes At")]
+        public byte ClosingHourId { get; set; }
+
+        //[Required]
+        //[Display(Name = "Available Seats")]
+        //public int AvailableSeats { get; set; }
+
+        //public ScreeningTime ScreeningTime { get; set; }
+
+        //[Required]
+        //[Display(Name = "Screening Time")]
+        //public byte? ScreeningTimeId { get; set; }
+
+        public Cinema() { }
+
+        public Cinema(int id, string name, string address, int totalSeats, OpeningHour openingHour, ClosingHour closingHour, byte openingHourId, byte closingHourId/*int availableSeats, ScreeningTime screeningTime*/)
+        {
+            Id = id;
+            Name = name;
+            Address = address;
+            TotalSeats = totalSeats;
+            OpeningHour = openingHour;
+            OpeningHourId = openingHourId;
+            ClosingHour = closingHour;
+            ClosingHourId = closingHourId;
+            //AvailableSeats = availableSeats;
+            //ScreeningTime = screeningTime;
+        }
     }
 }

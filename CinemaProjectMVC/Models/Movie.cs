@@ -30,8 +30,12 @@ namespace CinemaProjectMVC.Models
 
         public Rating Rating { get; set; }
 
+        [Required]
+        [Display(Name = "Rating")]
+        public byte RatingId { get; set; }
+
         public Movie() { }
-        public Movie(int id, string name, Genre genre, byte genreId, DateTime releaseDate, int durationInMinutes, Rating rating)
+        public Movie(int id, string name, Genre genre, byte genreId, DateTime releaseDate, int durationInMinutes, Rating rating, byte ratingId)
         {
             Id = id;
             Name = name;
@@ -40,6 +44,7 @@ namespace CinemaProjectMVC.Models
             ReleaseDate = releaseDate;
             DurationInMinutes = durationInMinutes;
             Rating = rating;
+            RatingId = ratingId;
         }
     }
 }

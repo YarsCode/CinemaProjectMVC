@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CinemaProjectMVC.Models.Cinema>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display: flex;">
+    <h2>Cinemas</h2>
+
+    <p style="padding: 10px; margin: auto 5%;">
+        @Html.ActionLink("New Cinema", "New", "Cinemas", null, new { @class = "button" })
+    </p>
+</div>
+
+
+<table id="movies" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Cinema</th>
+            <th>Address</th>
+            <th>Total Seats</th>
+            <th>Opens At</th>
+            <th>Closes At</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var cinema in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(@cinema.Name, "Edit", "Cinemas", new { id = @cinema.Id }, null)</td>
+            <td>@cinema.Address</td>
+            <td>@cinema.TotalSeats</td>
+            <td>@cinema.OpeningHour.Time.ToShortTimeString()</td>
+            <td>@cinema.ClosingHour.Time.ToShortTimeString()</td>
+        </tr>        
+    }
+    </tbody>
+</table>
+
