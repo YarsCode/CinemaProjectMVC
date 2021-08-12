@@ -35,6 +35,17 @@
         @Html.ValidationMessageFor(c => c.ClosingHourId)
     </div>
 
+    @*<p>
+        @{
+            string startTime = "7:00 AM";
+            string endTime = "2:00 PM";
+
+            TimeSpan duration = DateTime.Parse(endTime).Subtract(DateTime.Parse(startTime));
+            @duration
+        }
+    
+    </p>*@
+
     @Html.HiddenFor(c => c.Id)
     @Html.AntiForgeryToken()
     <button type="submit" class="button">Save</button>

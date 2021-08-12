@@ -28,11 +28,11 @@
         <tr>
             <td>@Html.ActionLink(@movie.Name, "Edit", "Movies", new { id = @movie.Id }, null)</td>
             <td>@movie.Genre.Name</td>
-            <td>@movie.ReleaseDate</td>
+            <td>@movie.ReleaseDate.ToShortDateString()</td>
             <td>@movie.DurationInMinutes</td>
             <td>@movie.Rating.Stars</td>
         </tr>        
     }
         </tbody>
-    </table>
+</table>
 

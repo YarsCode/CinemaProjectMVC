@@ -26,6 +26,7 @@ namespace CinemaProjectMVC.Models
         public DbSet<Rating> Ratings{ get; set; }
         public DbSet<OpeningHour> OpeningHours { get; set; }
         public DbSet<ClosingHour> ClosingHours { get; set; }
+        public DbSet<Screening> Screenings { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

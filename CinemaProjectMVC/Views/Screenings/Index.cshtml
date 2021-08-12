@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CinemaProjectMVC.Models.Screening>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Screenings</h2>
+
+<table id="screenings" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Cinema</th>
+            <th>Movie</th>
+            <th>Times</th>
+            <th>Available Seats</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var screening in Model)
+        {
+        <tr>
+            <td>@Html.ActionLink("Edit", "Screenings", new { id = @screening.Id }, null)</td>
+            <td>@screening.Cinema</td>
+            <td>@screening.Movie</td>
+            <ul>
+                @foreach (var time in screening.Times)
+                {
+                    <li>@time</li>
+                }
+            </ul>
+            <td>@screening.Times</td>
+            <td>@screening.AvailableSeats</td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+

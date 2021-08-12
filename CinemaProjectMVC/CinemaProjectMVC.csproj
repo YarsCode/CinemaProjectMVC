@@ -173,6 +173,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\ScreeningsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +225,22 @@
     <Compile Include="Migrations\202108120840059_UpdateOpeningAndClosingHoursModels.Designer.cs">
       <DependentUpon>202108120840059_UpdateOpeningAndClosingHoursModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108121331382_AddScreeningModel.cs" />
+    <Compile Include="Migrations\202108121331382_AddScreeningModel.Designer.cs">
+      <DependentUpon>202108121331382_AddScreeningModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108121334171_AddScreeningModel1.cs" />
+    <Compile Include="Migrations\202108121334171_AddScreeningModel1.Designer.cs">
+      <DependentUpon>202108121334171_AddScreeningModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108121337550_AddScreeningModel2.cs" />
+    <Compile Include="Migrations\202108121337550_AddScreeningModel2.Designer.cs">
+      <DependentUpon>202108121337550_AddScreeningModel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108121355451_AddScreeningModel3.cs" />
+    <Compile Include="Migrations\202108121355451_AddScreeningModel3.Designer.cs">
+      <DependentUpon>202108121355451_AddScreeningModel3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cinema.cs" />
@@ -234,10 +251,12 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\OpeningHour.cs" />
     <Compile Include="Models\Rating.cs" />
+    <Compile Include="Models\Screening.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CinemaFormViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
+    <Compile Include="ViewModels\ScreeningFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -301,6 +320,7 @@
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Cinemas\CinemaForm.cshtml" />
     <Content Include="Views\Cinemas\Index.cshtml" />
+    <Content Include="Views\Screenings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +374,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108120840059_UpdateOpeningAndClosingHoursModels.resx">
       <DependentUpon>202108120840059_UpdateOpeningAndClosingHoursModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121331382_AddScreeningModel.resx">
+      <DependentUpon>202108121331382_AddScreeningModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121334171_AddScreeningModel1.resx">
+      <DependentUpon>202108121334171_AddScreeningModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121337550_AddScreeningModel2.resx">
+      <DependentUpon>202108121337550_AddScreeningModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121355451_AddScreeningModel3.resx">
+      <DependentUpon>202108121355451_AddScreeningModel3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

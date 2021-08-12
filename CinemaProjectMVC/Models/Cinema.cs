@@ -33,16 +33,6 @@ namespace CinemaProjectMVC.Models
         [Display(Name = "Closes At")]
         public byte ClosingHourId { get; set; }
 
-        //[Required]
-        //[Display(Name = "Available Seats")]
-        //public int AvailableSeats { get; set; }
-
-        //public ScreeningTime ScreeningTime { get; set; }
-
-        //[Required]
-        //[Display(Name = "Screening Time")]
-        //public byte? ScreeningTimeId { get; set; }
-
         public Cinema() { }
 
         public Cinema(int id, string name, string address, int totalSeats, OpeningHour openingHour, ClosingHour closingHour, byte openingHourId, byte closingHourId/*int availableSeats, ScreeningTime screeningTime*/)
@@ -55,8 +45,6 @@ namespace CinemaProjectMVC.Models
             OpeningHourId = openingHourId;
             ClosingHour = closingHour;
             ClosingHourId = closingHourId;
-            //AvailableSeats = availableSeats;
-            //ScreeningTime = screeningTime;
         }
     }
 }
