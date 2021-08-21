@@ -37,10 +37,20 @@
     @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken()
     <button type="submit" class="button">Save</button>
+    if (Model.Title == "Edit Movie")
+    {
+        @Html.ActionLink("Delete", "Delete", "Movies", new { id = Model.Id }, new { @class = "button" })
+    }
 }
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
 @*@@{
-    var totalMinutes = 90;
-    var one = totalMinutes / 60;
-    var two = totalMinutes % 60;
-    <p>@one ||||| @two</p>
-}*@
+        var totalMinutes = 90;
+        var one = totalMinutes / 60;
+        var two = totalMinutes % 60;
+        <p>@one ||||| @two</p>
+    }*@

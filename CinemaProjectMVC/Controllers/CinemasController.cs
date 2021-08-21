@@ -58,6 +58,7 @@ namespace CinemaProjectMVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Cinema cinema)
         {
             if (!ModelState.IsValid)
@@ -109,6 +110,20 @@ namespace CinemaProjectMVC.Controllers
             };
 
             return View("CinemaForm", viewModel);
+        }
+
+        
+        public ActionResult Delete(int id)
+        {
+            var cinemaInDb = _context.Cinemas.SingleOrDefault(c => c.Id == id);
+
+            if (cinemaInDb == null)
+                return HttpNotFound();
+
+            _context.Cinemas.Remove(cinemaInDb);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Cinemas");
         }
     }
 }

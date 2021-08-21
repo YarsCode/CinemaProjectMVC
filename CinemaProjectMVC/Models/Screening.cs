@@ -10,28 +10,40 @@ namespace CinemaProjectMVC.Models
     {
         public int Id { get; set; }
 
-        [Required]
         public Cinema Cinema { get; set; }
 
         [Required]
+        public byte CinemaId { get; set; }
+
         public Movie Movie { get; set; }
 
         [Required]
-        public List<DateTime> Times { get; set; }
+        public byte MovieId { get; set; }
+
+        [Required]
+        public DateTime Date { get; set; }
 
         [Required]
         [Display(Name = "Available Seats")]
+        [ValidNumberOfSeats]
         public int AvailableSeats { get; set; }
+
+        [Required]
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter valid number")]
+        public int Price { get; set; }
 
         public Screening() { }
 
-        public Screening(int id, Cinema cinema, Movie movie, List<DateTime> times, int availableSeats)
+        public Screening(int id, Cinema cinema, Movie movie, byte cinemaId, byte movieId, DateTime date, int availableSeats, int price)
         {
             Id = id;
             Cinema = cinema;
             Movie = movie;
-            Times = times;
+            CinemaId = cinemaId;
+            MovieId = movieId;
+            Date = date;
             AvailableSeats = availableSeats;
+            Price = price;
         }
     }
 }

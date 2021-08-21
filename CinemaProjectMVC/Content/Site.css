@@ -37,7 +37,7 @@ textarea {
     border-radius: 3px;
 }
 
-.button:hover {
+    .button:hover, .order-now-button:hover {
     color: black;
     text-decoration: none;
     background: #dc751b;
@@ -58,11 +58,85 @@ tbody a {
 }
 
 .field-validation-error,
-label.error {
+label.error,
+.validation-summary-errors {
     color: red;
+}
+
+.validation-summary-errors {
+    font-weight:  bold;
 }
 
 .input-validation-error,
 input.error {
     border: 2px solid red;
+}
+
+.empty-table {
+    font-weight: bold;
+    color: #6a040f;
+}
+
+.cinemas {
+    width: 100%;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.cinemas a:hover{
+    text-decoration: none;
+}
+
+.cinemas__card {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 5px;    
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,0.8) 0%, rgba(168,27,255,0.8) 36%, rgba(105,21,157,0.8) 61%, rgba(42,0,54,0.8) 100%);
+}
+
+.cinemas__card p {
+    color: #F5F5F5;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.cinemas__card:hover {
+    transition: opacity ease-out 0.4s;
+    opacity: 0.7;
+}
+
+.order-now-button {
+    color: black;
+    text-decoration: none;
+    background: #f5821e;
+    border: none;
+    padding: 2px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.title-container {
+    display: flex;
+}
+
+.title-container h1 {
+    margin: auto;
+    padding: 40px;
+    font-weight: bolder;
+    text-shadow: 3px 0px rgba(230, 230, 230, 0.35);
+    background: -webkit-linear-gradient(#42dfff, #a81bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: font-size ease-in-out 0.3s;
+    font-size: 60px;
 }

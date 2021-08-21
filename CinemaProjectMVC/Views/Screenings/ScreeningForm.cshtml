@@ -1,0 +1,69 @@
+﻿@model CinemaProjectMVC.ViewModels.ScreeningFormViewModel
+@{
+    ViewBag.Title = "ScreeningForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Save", "Screenings"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    <div class="form-group">
+        @Html.LabelFor(s => s.CinemaId)
+        @Html.DropDownListFor(s => s.CinemaId, new SelectList(Model.Cinemas, "Id", "Name"), "Select a Cinema", new { id = "cinema", @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.CinemaId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.MovieId)
+        @Html.DropDownListFor(s => s.MovieId, new SelectList(Model.Movies, "Id", "Name"), "Select a Movie", new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.MovieId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.Date)
+        @Html.TextBoxFor(s => s.Date, "{0:d MMM yyyy, HH:mm}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.Date)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.AvailableSeats)
+        @Html.TextBoxFor(s => s.AvailableSeats, new { @type = "number", @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.AvailableSeats)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.Price)
+        @Html.TextBoxFor(s => s.Price, new { @type = "number", @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.Price)
+    </div>
+
+    @Html.HiddenFor(s => s.Id)
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="button">Save</button>
+    if (Model.Title == "Edit Screening")
+    {
+        @Html.ActionLink("Delete", "Delete", "Screenings", new { id = Model.Id }, new { @class = "button" })
+    }
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+<script>
+    //$(document).ready(function () {
+    //    $("#cinema").change(function () {
+    //        alert("AWJI");
+    //    });
+    //});
+    
+    //$(document).ready(function () {
+    //    $("#cinema").append("<option value='Select'>Select</option>");
+    //});
+    //$("#cinema").each(function (e, asdf) {
+    //    alert(asdf);
+    //});
+    //    $("#cinema").val(function (a, c) {
+    //return a + "ASD";
+//});
+</script>
+}

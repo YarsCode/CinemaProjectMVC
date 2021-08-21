@@ -7,13 +7,13 @@ namespace CinemaProjectMVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ChangeCinemaModel : IMigrationMetadata
+    public sealed partial class RecreateScreeningModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeCinemaModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RecreateScreeningModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108091309439_ChangeCinemaModel"; }
+            get { return "202108181748535_RecreateScreeningModel"; }
         }
         
         string IMigrationMetadata.Source

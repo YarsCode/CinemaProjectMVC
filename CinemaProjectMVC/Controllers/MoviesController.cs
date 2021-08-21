@@ -55,6 +55,7 @@ namespace CinemaProjectMVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
@@ -99,6 +100,19 @@ namespace CinemaProjectMVC.Controllers
             };
 
             return View("MovieForm", viewModel);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movieInDb == null)
+                return HttpNotFound();
+
+            _context.Movies.Remove(movieInDb);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Movies");
         }
     }
 }

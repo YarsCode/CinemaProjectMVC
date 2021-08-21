@@ -24,16 +24,27 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var cinema in Model)
-    {
-        <tr>
-            <td>@Html.ActionLink(@cinema.Name, "Edit", "Cinemas", new { id = @cinema.Id }, null)</td>
-            <td>@cinema.Address</td>
-            <td>@cinema.TotalSeats</td>
-            <td>@cinema.OpeningHour.Time.ToShortTimeString()</td>
-            <td>@cinema.ClosingHour.Time.ToShortTimeString()</td>
-        </tr>        
-    }
+        @{
+            if (!Model.Any())
+            {
+                <tr>
+                    <td class="empty-table" colspan="5">There are no cinemas.</td>
+                </tr>
+            }
+        }
+        @foreach (var cinema in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(@cinema.Name, "Edit", "Cinemas", new { id = @cinema.Id }, null)</td>
+                <td>@cinema.Address</td>
+                <td>@cinema.TotalSeats</td>
+                <td>@cinema.OpeningHour.Time.ToShortTimeString()</td>
+                <td>@cinema.ClosingHour.Time.ToShortTimeString()</td>
+                @*<td>
+                    <button class="btn-link js-delete">Delete</button>
+                </td>*@
+            </tr>
+
+        }
     </tbody>
 </table>
-

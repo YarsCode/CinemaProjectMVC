@@ -9,33 +9,52 @@ namespace CinemaProjectMVC.ViewModels
 {
     public class ScreeningFormViewModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
+
+        public IEnumerable<Cinema> Cinemas { get; set; }
 
         [Required]
-        public Cinema Cinema { get; set; }
+        [Display(Name = "Cinemas")]
+        public byte? CinemaId { get; set; }
+
+        public IEnumerable<Movie> Movies { get; set; }
 
         [Required]
-        public Movie Movie { get; set; }
+        [Display(Name = "Movies")]
+        public byte? MovieId { get; set; }
 
         [Required]
-        public List<DateTime> Times { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
         [Display(Name = "Available Seats")]
         public int AvailableSeats { get; set; }
+
+        [Required]
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter valid number")]
+        public int Price { get; set; }
+
+        public string Title
+        {
+            get
+            {
+                return Id != 0 ? "Edit Screening" : "New Screening";
+            }
+        }
 
         public ScreeningFormViewModel()
         {
             Id = 0;
         }
 
-        public ScreeningFormViewModel(int id, Cinema cinema, Movie movie, List<DateTime> times, int availableSeats)
+        public ScreeningFormViewModel(Screening screening)
         {
-            Id = id;
-            Cinema = cinema;
-            Movie = movie;
-            Times = times;
-            AvailableSeats = availableSeats;
+            Id = screening.Id;
+            CinemaId = screening.CinemaId;
+            MovieId = screening.MovieId;
+            Date = screening.Date;
+            AvailableSeats = screening.AvailableSeats;
+            Price = screening.Price;
         }
     }
 }

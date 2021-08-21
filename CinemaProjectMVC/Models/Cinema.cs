@@ -18,6 +18,7 @@ namespace CinemaProjectMVC.Models
         public string Address { get; set; }
 
         [Required]
+        [Range(0, int.MaxValue, ErrorMessage = "Please enter valid number")]
         [Display(Name = "Total Seats")]
         public int TotalSeats { get; set; }
 

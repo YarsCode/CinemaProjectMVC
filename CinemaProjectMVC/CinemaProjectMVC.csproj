@@ -173,73 +173,18 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ScreeningsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108051418087_InitialCreate.cs" />
-    <Compile Include="Migrations\202108051418087_InitialCreate.Designer.cs">
-      <DependentUpon>202108051418087_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202108181748535_RecreateScreeningModel.cs" />
+    <Compile Include="Migrations\202108181748535_RecreateScreeningModel.Designer.cs">
+      <DependentUpon>202108181748535_RecreateScreeningModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108080810566_InitialModel.cs" />
-    <Compile Include="Migrations\202108080810566_InitialModel.Designer.cs">
-      <DependentUpon>202108080810566_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108080823247_PopulateGenres.cs" />
-    <Compile Include="Migrations\202108080823247_PopulateGenres.Designer.cs">
-      <DependentUpon>202108080823247_PopulateGenres.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108081004227_ChangedRatingNameToStars.cs" />
-    <Compile Include="Migrations\202108081004227_ChangedRatingNameToStars.Designer.cs">
-      <DependentUpon>202108081004227_ChangedRatingNameToStars.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108081004381_PopulateRatings.cs" />
-    <Compile Include="Migrations\202108081004381_PopulateRatings.Designer.cs">
-      <DependentUpon>202108081004381_PopulateRatings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108081332305_AddRatingIdToMovie.cs" />
-    <Compile Include="Migrations\202108081332305_AddRatingIdToMovie.Designer.cs">
-      <DependentUpon>202108081332305_AddRatingIdToMovie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108091309439_ChangeCinemaModel.cs" />
-    <Compile Include="Migrations\202108091309439_ChangeCinemaModel.Designer.cs">
-      <DependentUpon>202108091309439_ChangeCinemaModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108091328199_PopulateScreeningTimes.cs" />
-    <Compile Include="Migrations\202108091328199_PopulateScreeningTimes.Designer.cs">
-      <DependentUpon>202108091328199_PopulateScreeningTimes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108110945325_FixModels.cs" />
-    <Compile Include="Migrations\202108110945325_FixModels.Designer.cs">
-      <DependentUpon>202108110945325_FixModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108110947307_AddOpeningAndClosingHours.cs" />
-    <Compile Include="Migrations\202108110947307_AddOpeningAndClosingHours.Designer.cs">
-      <DependentUpon>202108110947307_AddOpeningAndClosingHours.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108110953228_PopulateOpeningAndClosingHours.cs" />
-    <Compile Include="Migrations\202108110953228_PopulateOpeningAndClosingHours.Designer.cs">
-      <DependentUpon>202108110953228_PopulateOpeningAndClosingHours.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108120840059_UpdateOpeningAndClosingHoursModels.cs" />
-    <Compile Include="Migrations\202108120840059_UpdateOpeningAndClosingHoursModels.Designer.cs">
-      <DependentUpon>202108120840059_UpdateOpeningAndClosingHoursModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108121331382_AddScreeningModel.cs" />
-    <Compile Include="Migrations\202108121331382_AddScreeningModel.Designer.cs">
-      <DependentUpon>202108121331382_AddScreeningModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108121334171_AddScreeningModel1.cs" />
-    <Compile Include="Migrations\202108121334171_AddScreeningModel1.Designer.cs">
-      <DependentUpon>202108121334171_AddScreeningModel1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108121337550_AddScreeningModel2.cs" />
-    <Compile Include="Migrations\202108121337550_AddScreeningModel2.Designer.cs">
-      <DependentUpon>202108121337550_AddScreeningModel2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108121355451_AddScreeningModel3.cs" />
-    <Compile Include="Migrations\202108121355451_AddScreeningModel3.Designer.cs">
-      <DependentUpon>202108121355451_AddScreeningModel3.cs</DependentUpon>
+    <Compile Include="Migrations\202108181749415_RecreateScreeningModel1.cs" />
+    <Compile Include="Migrations\202108181749415_RecreateScreeningModel1.Designer.cs">
+      <DependentUpon>202108181749415_RecreateScreeningModel1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -252,8 +197,10 @@
     <Compile Include="Models\OpeningHour.cs" />
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Screening.cs" />
+    <Compile Include="Models\ValidNumberOfSeats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ChooseCinemasViewModel.cs" />
     <Compile Include="ViewModels\CinemaFormViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\ScreeningFormViewModel.cs" />
@@ -321,6 +268,9 @@
     <Content Include="Views\Cinemas\CinemaForm.cshtml" />
     <Content Include="Views\Cinemas\Index.cshtml" />
     <Content Include="Views\Screenings\Index.cshtml" />
+    <Content Include="Views\Screenings\ScreeningForm.cshtml" />
+    <Content Include="Views\Orders\OrderForm.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -339,53 +289,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108051418087_InitialCreate.resx">
-      <DependentUpon>202108051418087_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108181748535_RecreateScreeningModel.resx">
+      <DependentUpon>202108181748535_RecreateScreeningModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108080810566_InitialModel.resx">
-      <DependentUpon>202108080810566_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108080823247_PopulateGenres.resx">
-      <DependentUpon>202108080823247_PopulateGenres.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108081004227_ChangedRatingNameToStars.resx">
-      <DependentUpon>202108081004227_ChangedRatingNameToStars.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108081004381_PopulateRatings.resx">
-      <DependentUpon>202108081004381_PopulateRatings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108081332305_AddRatingIdToMovie.resx">
-      <DependentUpon>202108081332305_AddRatingIdToMovie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108091309439_ChangeCinemaModel.resx">
-      <DependentUpon>202108091309439_ChangeCinemaModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108091328199_PopulateScreeningTimes.resx">
-      <DependentUpon>202108091328199_PopulateScreeningTimes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108110945325_FixModels.resx">
-      <DependentUpon>202108110945325_FixModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108110947307_AddOpeningAndClosingHours.resx">
-      <DependentUpon>202108110947307_AddOpeningAndClosingHours.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108110953228_PopulateOpeningAndClosingHours.resx">
-      <DependentUpon>202108110953228_PopulateOpeningAndClosingHours.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108120840059_UpdateOpeningAndClosingHoursModels.resx">
-      <DependentUpon>202108120840059_UpdateOpeningAndClosingHoursModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108121331382_AddScreeningModel.resx">
-      <DependentUpon>202108121331382_AddScreeningModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108121334171_AddScreeningModel1.resx">
-      <DependentUpon>202108121334171_AddScreeningModel1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108121337550_AddScreeningModel2.resx">
-      <DependentUpon>202108121337550_AddScreeningModel2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108121355451_AddScreeningModel3.resx">
-      <DependentUpon>202108121355451_AddScreeningModel3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108181749415_RecreateScreeningModel1.resx">
+      <DependentUpon>202108181749415_RecreateScreeningModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

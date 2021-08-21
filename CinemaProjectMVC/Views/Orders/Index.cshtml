@@ -1,0 +1,33 @@
+﻿@model CinemaProjectMVC.ViewModels.ChooseCinemasViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var cinemas = Model.Cinemas;
+}
+
+<div class="title-container">
+    <h1>Welcome to the Cinema World!</h1>
+</div>
+
+<h2 style="border-bottom: 2px solid #D6D6D6; padding-bottom: 15px;">Please choose a cinema</h2>
+
+@if (cinemas.Count == 0)
+{
+    <div class="alert alert-info">There are no cinemas to choose from.</div>
+}
+else
+{
+    <div class="cinemas">
+        @foreach (var cinema in cinemas)
+        {
+            <a href=@("/orders/availablescreenings/"+cinema.Id)>
+                <div class="cinemas__card">
+                    <p>@cinema.Name</p>
+                </div>
+            </a>
+        }
+    </div>
+}

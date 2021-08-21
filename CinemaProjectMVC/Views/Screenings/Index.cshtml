@@ -4,33 +4,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Screenings</h2>
+<div style="display: flex;">
+    <h2>Screenings</h2>
+
+    <p style="padding: 10px; margin: auto 5%;">
+        @Html.ActionLink("New Screening", "New", "Screenings", null, new { @class = "button" })
+    </p>
+</div>
 
 <table id="screenings" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Cinema</th>
             <th>Movie</th>
-            <th>Times</th>
+            <th>Date</th>
             <th>Available Seats</th>
+            <th>Price</th>
         </tr>
     </thead>
     <tbody>
+        @{ 
+            if (!Model.Any())
+            {
+                <tr>
+                    <td class="empty-table" colspan="5">There are no screenings.</td>
+                </tr>
+            }
+        }
         @foreach (var screening in Model)
         {
-        <tr>
-            <td>@Html.ActionLink("Edit", "Screenings", new { id = @screening.Id }, null)</td>
-            <td>@screening.Cinema</td>
-            <td>@screening.Movie</td>
-            <ul>
-                @foreach (var time in screening.Times)
-                {
-                    <li>@time</li>
-                }
-            </ul>
-            <td>@screening.Times</td>
-            <td>@screening.AvailableSeats</td>
-        </tr>
+    <tr>
+        <td>@Html.ActionLink(@screening.Cinema.Name, "Edit", "Screenings", new { id = @screening.Id }, null)</td>
+        <td>@screening.Movie.Name</td>
+        <td>@screening.Date.ToString("d MMM yyyy, HH:mm")</td>
+        <td>@screening.AvailableSeats</td>
+        <td>@screening.Price₪</td>
+    </tr>
 
         }
     </tbody>

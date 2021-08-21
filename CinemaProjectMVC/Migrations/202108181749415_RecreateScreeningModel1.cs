@@ -3,7 +3,7 @@ namespace CinemaProjectMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddScreeningModel : DbMigration
+    public partial class RecreateScreeningModel1 : DbMigration
     {
         public override void Up()
         {
@@ -12,13 +12,17 @@ namespace CinemaProjectMVC.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        CinemaId = c.Byte(nullable: false),
+                        MovieId = c.Byte(nullable: false),
+                        Date = c.DateTime(nullable: false),
                         AvailableSeats = c.Int(nullable: false),
-                        Cinema_Id = c.Int(nullable: false),
-                        Movie_Id = c.Int(nullable: false),
+                        Price = c.Int(nullable: false),
+                        Cinema_Id = c.Int(),
+                        Movie_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cinemas", t => t.Cinema_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Movies", t => t.Movie_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Cinemas", t => t.Cinema_Id)
+                .ForeignKey("dbo.Movies", t => t.Movie_Id)
                 .Index(t => t.Cinema_Id)
                 .Index(t => t.Movie_Id);
             

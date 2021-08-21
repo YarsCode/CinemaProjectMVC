@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CinemaProjectMVC.Models.Screening>
+@{
+    ViewBag.Title = "OrderForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Buy Tickets</h2>
+
+<table id="screenings" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Date</th>
+            <th>Tickets</th>
+            <th>Price</th>
+            <th>Order Now!</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (!Model.Any())
+            {
+                <tr>
+                    <td class="empty-table" colspan="5">There are no screenings.</td>
+                </tr>
+            }
+        }
+        @{
+            var row = 1;
+        }
+        @foreach (var screening in Model)
+        {
+            var rowId = "row" + row;
+            using (Html.BeginForm("Save", "Orders"))
+            {
+                @Html.ValidationSummary(true, "Please fix the following errors.")
+                <tr id="@rowId">
+
+                    <td>@screening.Movie.Name</td>
+
+                    <td>@screening.Date.ToString("d MMM yyyy, HH:mm")</td>
+
+                    <td>
+                        @Html.TextBoxFor(s => screening, new { @type = "number", Value = "1" })
+                        @Html.ValidationMessageFor(s => screening)
+                    </td>
+                    <td id="@screening.Price">@screening.Price₪</td>
+                    <td><button type="submit" class="order-now-button">Order Now</button></td>
+                </tr>
+                //@Html.HiddenFor(s => s.Id)
+                @Html.AntiForgeryToken()
+            }
+            row++;
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $('#screenings tbody tr td:nth-child(3)').change(function (c) {
+                let row = c.target.parentElement.parentElement.id;
+                const price = $('#' + row + " td:nth-child(4)").attr('id');
+                if (c.target.value < 0) {
+                    c.target.value = 0
+                }
+                $('#' + row + " td:nth-child(4)").html(price * c.target.value + "₪")
+            });
+        });
+    </script>
+}

@@ -23,16 +23,25 @@
         </tr>
     </thead>
     <tbody>
+        @{
+            if (!Model.Any())
+            {
+                <tr>
+                    <td class="empty-table" colspan="5">There are no movies.</td>
+                </tr>
+            }
+        }
         @foreach (var movie in Model)
         {
-        <tr>
-            <td>@Html.ActionLink(@movie.Name, "Edit", "Movies", new { id = @movie.Id }, null)</td>
-            <td>@movie.Genre.Name</td>
-            <td>@movie.ReleaseDate.ToShortDateString()</td>
-            <td>@movie.DurationInMinutes</td>
-            <td>@movie.Rating.Stars</td>
-        </tr>        
-    }
-        </tbody>
+            <tr>
+                <td>@Html.ActionLink(@movie.Name, "Edit", "Movies", new { id = @movie.Id }, null)</td>
+                <td>@movie.Genre.Name</td>
+                <td>@movie.ReleaseDate.ToShortDateString()</td>
+                <td>@movie.DurationInMinutes</td>
+                <td>@movie.Rating.Stars</td>
+            </tr>
+
+        }
+    </tbody>
 </table>
 
