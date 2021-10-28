@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using CinemaProjectMVC.Models;
 using System.Linq;
 using System.Web;
@@ -19,8 +20,8 @@ namespace CinemaProjectMVC.Models
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var screening = (Screening)validationContext.ObjectInstance;
-            var cinema = _context.Cinemas.SingleOrDefault(c => c.Id == screening.CinemaId);
-            
+            var cinema = _context.Cinemas.Include(c => c.Seats).SingleOrDefault(c => c.Id == screening.CinemaId);
+
 
             //if (customer.MembershipTypeId == MembershipType.Unknown ||
             //    customer.MembershipTypeId == MembershipType.PayAsYouGo)
@@ -30,9 +31,12 @@ namespace CinemaProjectMVC.Models
 
             //var age = DateTime.Today.Year - customer.Birthdate.Value.Year;
 
-            return (screening.AvailableSeats <= cinema.TotalSeats)
+            //TODO ===> Fix this function's logic
+            var numberOfSeats = cinema.Seats.Where(s => s.isAvailable).ToList().Count();
+
+            return (screening.AvailableSeatsNumber <= numberOfSeats)
                 ? ValidationResult.Success
-                : new ValidationResult("Your chosen cinema has only " + cinema.TotalSeats + " seats, please select a valid number.");
+                : new ValidationResult("Your chosen cinema has only " + cinema.NumberOfSeats + " seats, please select a valid number.");
         }
     }
 }

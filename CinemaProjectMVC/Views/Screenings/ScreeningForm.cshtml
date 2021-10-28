@@ -5,6 +5,9 @@
 }
 
 <h2>@Model.Title</h2>
+@{ 
+    @Model.Cinemas
+}
 
 @using (Html.BeginForm("Save", "Screenings"))
 {
@@ -25,9 +28,12 @@
         @Html.ValidationMessageFor(s => s.Date)
     </div>
     <div class="form-group">
-        @Html.LabelFor(s => s.AvailableSeats)
-        @Html.TextBoxFor(s => s.AvailableSeats, new { @type = "number", @class = "form-control" })
-        @Html.ValidationMessageFor(s => s.AvailableSeats)
+        @{
+            var availableSeats = @Model.AvailableSeatsNumber;
+        }
+        @Html.LabelFor(s => s.AvailableSeatsNumber)
+        @Html.TextBoxFor(s => s.AvailableSeatsNumber, new { id = "availableSeats", @Value = availableSeats, @type = "number", @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.AvailableSeatsNumber)
     </div>
     <div class="form-group">
         @Html.LabelFor(s => s.Price)
@@ -50,20 +56,13 @@
     @Scripts.Render("~/bundles/jqueryval")
 
 <script>
-    //$(document).ready(function () {
-    //    $("#cinema").change(function () {
-    //        alert("AWJI");
-    //    });
-    //});
-    
-    //$(document).ready(function () {
-    //    $("#cinema").append("<option value='Select'>Select</option>");
-    //});
-    //$("#cinema").each(function (e, asdf) {
-    //    alert(asdf);
-    //});
-    //    $("#cinema").val(function (a, c) {
-    //return a + "ASD";
-//});
+    $(document).ready(function () {
+        $("#cinema").change(function () {
+            var test = $('#availableSeats').text();
+            //alert(test);
+            alert($('#availableSeats').find(":selected").text())
+        });
+    });
+
 </script>
 }

@@ -56,7 +56,7 @@ namespace CinemaProjectMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Screening screening)
         {
-            var screeningInDb = _context.Screenings.Single(s => s.Id == screening.Id);
+            //var screeningInDb = _context.Screenings.Single(s => s.Id == screening.Id);
 
             return RedirectToAction("", "");
         }

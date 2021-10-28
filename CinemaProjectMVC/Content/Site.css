@@ -97,13 +97,13 @@ input.error {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 70px 5px;    
-    background: rgb(0,212,255);
-    background: linear-gradient(90deg, rgba(0,212,255,0.8) 0%, rgba(168,27,255,0.8) 36%, rgba(105,21,157,0.8) 61%, rgba(42,0,54,0.8) 100%);
+    padding: 70px 5px;
+    background: rgb(168,27,255);
+    background: linear-gradient(150deg, rgba(168,27,255,0.8) 0%, rgba(255,153,64,0.8270658605238971) 35%, rgba(25,0,32,0.8) 67%, rgba(0,0,0,0.7990546560421043) 100%);
 }
 
 .cinemas__card p {
-    color: #F5F5F5;
+    color: #f9f9f9;
     font-size: 24px;
     letter-spacing: 1px;
     text-decoration: none;
@@ -129,14 +129,14 @@ input.error {
     display: flex;
 }
 
-.title-container h1 {
-    margin: auto;
-    padding: 40px;
-    font-weight: bolder;
-    text-shadow: 3px 0px rgba(230, 230, 230, 0.35);
-    background: -webkit-linear-gradient(#42dfff, #a81bff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: font-size ease-in-out 0.3s;
-    font-size: 60px;
-}
+    .title-container h1 {
+        margin: auto;
+        padding: 40px;
+        font-weight: bolder;
+        text-shadow: 2px 0px rgba(138, 62, 0, 0.21);
+        background: -webkit-linear-gradient(#a81bff, #ff9a42);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: font-size ease-in-out 0.3s;
+        font-size: 60px;
+    }

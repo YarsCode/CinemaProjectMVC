@@ -31,7 +31,7 @@
         @foreach (var screening in Model)
         {
             var rowId = "row" + row;
-            using (Html.BeginForm("Save", "Orders"))
+            using (Html.BeginForm("Save", "Orders", FormMethod.Post))
             {
                 @Html.ValidationSummary(true, "Please fix the following errors.")
                 <tr id="@rowId">
@@ -41,13 +41,14 @@
                     <td>@screening.Date.ToString("d MMM yyyy, HH:mm")</td>
 
                     <td>
-                        @Html.TextBoxFor(s => screening, new { @type = "number", Value = "1" })
-                        @Html.ValidationMessageFor(s => screening)
+                        @Html.TextBoxFor(s => screening.AvailableSeats, new { @type = "number", Value = "1" })
+                        @Html.ValidationMessageFor(s => screening.AvailableSeats)
                     </td>
                     <td id="@screening.Price">@screening.Price₪</td>
                     <td><button type="submit" class="order-now-button">Order Now</button></td>
                 </tr>
-                //@Html.HiddenFor(s => s.Id)
+                var id = screening.Id;
+                @Html.HiddenFor(s => screening.Id)
                 @Html.AntiForgeryToken()
             }
             row++;
@@ -63,8 +64,8 @@
             $('#screenings tbody tr td:nth-child(3)').change(function (c) {
                 let row = c.target.parentElement.parentElement.id;
                 const price = $('#' + row + " td:nth-child(4)").attr('id');
-                if (c.target.value < 0) {
-                    c.target.value = 0
+                if (c.target.value < 1) {
+                    c.target.value = 1
                 }
                 $('#' + row + " td:nth-child(4)").html(price * c.target.value + "₪")
             });

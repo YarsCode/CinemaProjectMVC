@@ -37,7 +37,10 @@
         <td>@Html.ActionLink(@screening.Cinema.Name, "Edit", "Screenings", new { id = @screening.Id }, null)</td>
         <td>@screening.Movie.Name</td>
         <td>@screening.Date.ToString("d MMM yyyy, HH:mm")</td>
-        <td>@screening.AvailableSeats</td>
+        @{
+            @*var availableSeats = @screening.AvailableSeatsNumber - screening.AvailableSeats.FindAll(s => !s.isAvailable).Count;
+            <td>@availableSeats</td>*@
+        }
         <td>@screening.Price₪</td>
     </tr>
 

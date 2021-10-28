@@ -186,6 +186,118 @@
     <Compile Include="Migrations\202108181749415_RecreateScreeningModel1.Designer.cs">
       <DependentUpon>202108181749415_RecreateScreeningModel1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108221307108_AddSeatModel.cs" />
+    <Compile Include="Migrations\202108221307108_AddSeatModel.Designer.cs">
+      <DependentUpon>202108221307108_AddSeatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108221353425_AddSeatModel1.cs" />
+    <Compile Include="Migrations\202108221353425_AddSeatModel1.Designer.cs">
+      <DependentUpon>202108221353425_AddSeatModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108241451205_ChangeSeatsPropertyInCinemaModel.cs" />
+    <Compile Include="Migrations\202108241451205_ChangeSeatsPropertyInCinemaModel.Designer.cs">
+      <DependentUpon>202108241451205_ChangeSeatsPropertyInCinemaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109051844403_AddForeignKeyToSeatModel.cs" />
+    <Compile Include="Migrations\202109051844403_AddForeignKeyToSeatModel.Designer.cs">
+      <DependentUpon>202109051844403_AddForeignKeyToSeatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109051847127_AddForeignKeyToSeatModel1.cs" />
+    <Compile Include="Migrations\202109051847127_AddForeignKeyToSeatModel1.Designer.cs">
+      <DependentUpon>202109051847127_AddForeignKeyToSeatModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109051848537_AddForeignKeyToSeatModel2.cs" />
+    <Compile Include="Migrations\202109051848537_AddForeignKeyToSeatModel2.Designer.cs">
+      <DependentUpon>202109051848537_AddForeignKeyToSeatModel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109051905469_AddForeignKeyToSeatModel3.cs" />
+    <Compile Include="Migrations\202109051905469_AddForeignKeyToSeatModel3.Designer.cs">
+      <DependentUpon>202109051905469_AddForeignKeyToSeatModel3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110141453424_ChangedScreeningModel.cs" />
+    <Compile Include="Migrations\202110141453424_ChangedScreeningModel.Designer.cs">
+      <DependentUpon>202110141453424_ChangedScreeningModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110180908447_ChangeSeatIDFromByteToInt.cs" />
+    <Compile Include="Migrations\202110180908447_ChangeSeatIDFromByteToInt.Designer.cs">
+      <DependentUpon>202110180908447_ChangeSeatIDFromByteToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110180923050_ChangeSeatIDFromIntToByte.cs" />
+    <Compile Include="Migrations\202110180923050_ChangeSeatIDFromIntToByte.Designer.cs">
+      <DependentUpon>202110180923050_ChangeSeatIDFromIntToByte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110191021366_DeleteAvailableSeatsProperty.cs" />
+    <Compile Include="Migrations\202110191021366_DeleteAvailableSeatsProperty.Designer.cs">
+      <DependentUpon>202110191021366_DeleteAvailableSeatsProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110191026035_AddedAvailableSeatsProperty.cs" />
+    <Compile Include="Migrations\202110191026035_AddedAvailableSeatsProperty.Designer.cs">
+      <DependentUpon>202110191026035_AddedAvailableSeatsProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110191038446_AddedAvailableSeatsID.cs" />
+    <Compile Include="Migrations\202110191038446_AddedAvailableSeatsID.Designer.cs">
+      <DependentUpon>202110191038446_AddedAvailableSeatsID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110191048025_DeletedAvailableSeatsID.cs" />
+    <Compile Include="Migrations\202110191048025_DeletedAvailableSeatsID.Designer.cs">
+      <DependentUpon>202110191048025_DeletedAvailableSeatsID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110191110229_AddedScreeningIdToSeatModel.cs" />
+    <Compile Include="Migrations\202110191110229_AddedScreeningIdToSeatModel.Designer.cs">
+      <DependentUpon>202110191110229_AddedScreeningIdToSeatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110191111224_DeletedScreeningIdToSeatModel.cs" />
+    <Compile Include="Migrations\202110191111224_DeletedScreeningIdToSeatModel.Designer.cs">
+      <DependentUpon>202110191111224_DeletedScreeningIdToSeatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110200707450_AddedAvailableSeatsIdProperty.cs" />
+    <Compile Include="Migrations\202110200707450_AddedAvailableSeatsIdProperty.Designer.cs">
+      <DependentUpon>202110200707450_AddedAvailableSeatsIdProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110200712316_AddedAvailableSeatsIdProperty1.cs" />
+    <Compile Include="Migrations\202110200712316_AddedAvailableSeatsIdProperty1.Designer.cs">
+      <DependentUpon>202110200712316_AddedAvailableSeatsIdProperty1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110211721392_DeleteScreeningIdFromSeatModel.cs" />
+    <Compile Include="Migrations\202110211721392_DeleteScreeningIdFromSeatModel.Designer.cs">
+      <DependentUpon>202110211721392_DeleteScreeningIdFromSeatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110211743045_DeleteScreeningIdFromSeatModel1.cs" />
+    <Compile Include="Migrations\202110211743045_DeleteScreeningIdFromSeatModel1.Designer.cs">
+      <DependentUpon>202110211743045_DeleteScreeningIdFromSeatModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110211745179_DeleteScreeningIdFromSeatModel2.cs" />
+    <Compile Include="Migrations\202110211745179_DeleteScreeningIdFromSeatModel2.Designer.cs">
+      <DependentUpon>202110211745179_DeleteScreeningIdFromSeatModel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110241201317_addSeatsProperty.cs" />
+    <Compile Include="Migrations\202110241201317_addSeatsProperty.Designer.cs">
+      <DependentUpon>202110241201317_addSeatsProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110241203527_ChangeSeatsIdToInt.cs" />
+    <Compile Include="Migrations\202110241203527_ChangeSeatsIdToInt.Designer.cs">
+      <DependentUpon>202110241203527_ChangeSeatsIdToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110260803296_ChangesInCinemaModel.cs" />
+    <Compile Include="Migrations\202110260803296_ChangesInCinemaModel.Designer.cs">
+      <DependentUpon>202110260803296_ChangesInCinemaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110270643187_AddSeatsIdProp.cs" />
+    <Compile Include="Migrations\202110270643187_AddSeatsIdProp.Designer.cs">
+      <DependentUpon>202110270643187_AddSeatsIdProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110270652131_RemoveSeatsIdProp.cs" />
+    <Compile Include="Migrations\202110270652131_RemoveSeatsIdProp.Designer.cs">
+      <DependentUpon>202110270652131_RemoveSeatsIdProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110270700420_RemoveSeatModel.cs" />
+    <Compile Include="Migrations\202110270700420_RemoveSeatModel.Designer.cs">
+      <DependentUpon>202110270700420_RemoveSeatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110270702535_AddSeatModel2.cs" />
+    <Compile Include="Migrations\202110270702535_AddSeatModel2.Designer.cs">
+      <DependentUpon>202110270702535_AddSeatModel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cinema.cs" />
@@ -197,6 +309,7 @@
     <Compile Include="Models\OpeningHour.cs" />
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Screening.cs" />
+    <Compile Include="Models\Seat.cs" />
     <Compile Include="Models\ValidNumberOfSeats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -204,6 +317,8 @@
     <Compile Include="ViewModels\CinemaFormViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\ScreeningFormViewModel.cs" />
+    <Compile Include="ViewModels\ScreeningsListViewModel.cs" />
+    <Compile Include="ViewModels\SeatsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -294,6 +409,90 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108181749415_RecreateScreeningModel1.resx">
       <DependentUpon>202108181749415_RecreateScreeningModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108221307108_AddSeatModel.resx">
+      <DependentUpon>202108221307108_AddSeatModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108221353425_AddSeatModel1.resx">
+      <DependentUpon>202108221353425_AddSeatModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108241451205_ChangeSeatsPropertyInCinemaModel.resx">
+      <DependentUpon>202108241451205_ChangeSeatsPropertyInCinemaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109051844403_AddForeignKeyToSeatModel.resx">
+      <DependentUpon>202109051844403_AddForeignKeyToSeatModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109051847127_AddForeignKeyToSeatModel1.resx">
+      <DependentUpon>202109051847127_AddForeignKeyToSeatModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109051848537_AddForeignKeyToSeatModel2.resx">
+      <DependentUpon>202109051848537_AddForeignKeyToSeatModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109051905469_AddForeignKeyToSeatModel3.resx">
+      <DependentUpon>202109051905469_AddForeignKeyToSeatModel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110141453424_ChangedScreeningModel.resx">
+      <DependentUpon>202110141453424_ChangedScreeningModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110180908447_ChangeSeatIDFromByteToInt.resx">
+      <DependentUpon>202110180908447_ChangeSeatIDFromByteToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110180923050_ChangeSeatIDFromIntToByte.resx">
+      <DependentUpon>202110180923050_ChangeSeatIDFromIntToByte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110191021366_DeleteAvailableSeatsProperty.resx">
+      <DependentUpon>202110191021366_DeleteAvailableSeatsProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110191026035_AddedAvailableSeatsProperty.resx">
+      <DependentUpon>202110191026035_AddedAvailableSeatsProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110191038446_AddedAvailableSeatsID.resx">
+      <DependentUpon>202110191038446_AddedAvailableSeatsID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110191048025_DeletedAvailableSeatsID.resx">
+      <DependentUpon>202110191048025_DeletedAvailableSeatsID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110191110229_AddedScreeningIdToSeatModel.resx">
+      <DependentUpon>202110191110229_AddedScreeningIdToSeatModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110191111224_DeletedScreeningIdToSeatModel.resx">
+      <DependentUpon>202110191111224_DeletedScreeningIdToSeatModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110200707450_AddedAvailableSeatsIdProperty.resx">
+      <DependentUpon>202110200707450_AddedAvailableSeatsIdProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110200712316_AddedAvailableSeatsIdProperty1.resx">
+      <DependentUpon>202110200712316_AddedAvailableSeatsIdProperty1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110211721392_DeleteScreeningIdFromSeatModel.resx">
+      <DependentUpon>202110211721392_DeleteScreeningIdFromSeatModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110211743045_DeleteScreeningIdFromSeatModel1.resx">
+      <DependentUpon>202110211743045_DeleteScreeningIdFromSeatModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110211745179_DeleteScreeningIdFromSeatModel2.resx">
+      <DependentUpon>202110211745179_DeleteScreeningIdFromSeatModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110241201317_addSeatsProperty.resx">
+      <DependentUpon>202110241201317_addSeatsProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110241203527_ChangeSeatsIdToInt.resx">
+      <DependentUpon>202110241203527_ChangeSeatsIdToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110260803296_ChangesInCinemaModel.resx">
+      <DependentUpon>202110260803296_ChangesInCinemaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110270643187_AddSeatsIdProp.resx">
+      <DependentUpon>202110270643187_AddSeatsIdProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110270652131_RemoveSeatsIdProp.resx">
+      <DependentUpon>202110270652131_RemoveSeatsIdProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110270700420_RemoveSeatModel.resx">
+      <DependentUpon>202110270700420_RemoveSeatModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110270702535_AddSeatModel2.resx">
+      <DependentUpon>202110270702535_AddSeatModel2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

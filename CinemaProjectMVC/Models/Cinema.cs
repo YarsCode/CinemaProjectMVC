@@ -19,8 +19,10 @@ namespace CinemaProjectMVC.Models
 
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Please enter valid number")]
-        [Display(Name = "Total Seats")]
-        public int TotalSeats { get; set; }
+        [Display(Name = "Total Number of Seats")]
+        public int NumberOfSeats { get; set; }
+
+        public List<Seat> Seats { get; set; }
 
         public OpeningHour OpeningHour { get; set; }
 
@@ -36,16 +38,17 @@ namespace CinemaProjectMVC.Models
 
         public Cinema() { }
 
-        public Cinema(int id, string name, string address, int totalSeats, OpeningHour openingHour, ClosingHour closingHour, byte openingHourId, byte closingHourId/*int availableSeats, ScreeningTime screeningTime*/)
-        {
-            Id = id;
-            Name = name;
-            Address = address;
-            TotalSeats = totalSeats;
-            OpeningHour = openingHour;
-            OpeningHourId = openingHourId;
-            ClosingHour = closingHour;
-            ClosingHourId = closingHourId;
-        }
+        //public Cinema(int id, string name, string address, int numberOfSeats, OpeningHour openingHour, ClosingHour closingHour, byte openingHourId, byte closingHourId)
+        //{
+        //    Id = id;
+        //    Name = name;
+        //    Address = address;
+        //    NumberOfSeats = numberOfSeats;
+        //    //TotalSeats = SetSeats(totalSeatsNumber);
+        //    OpeningHour = openingHour;
+        //    OpeningHourId = openingHourId;
+        //    ClosingHour = closingHour;
+        //    ClosingHourId = closingHourId;
+        //}
     }
 }

@@ -21,7 +21,9 @@ namespace CinemaProjectMVC.ViewModels
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Please enter valid number")]
         [Display(Name = "Total Seats")]
-        public int TotalSeats { get; set; }
+        public int NumberOfSeats { get; set; }
+
+        public List<Seat> Seats { get; set; }
 
         public IEnumerable<OpeningHour> OpeningHours { get; set; }
 
@@ -53,7 +55,8 @@ namespace CinemaProjectMVC.ViewModels
             Id = cinema.Id;
             Name = cinema.Name;
             Address = cinema.Address;
-            TotalSeats = cinema.TotalSeats;
+            NumberOfSeats = cinema.NumberOfSeats;
+            //Seats = cinema.Seats;
             OpeningHourId = cinema.OpeningHourId;
             ClosingHourId = cinema.ClosingHourId;            
         }
