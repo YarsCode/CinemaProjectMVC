@@ -23,7 +23,7 @@ namespace CinemaProjectMVC.ViewModels
         [Display(Name = "Total Seats")]
         public int NumberOfSeats { get; set; }
 
-        public List<Seat> Seats { get; set; }
+        //public List<Seat> Seats { get; set; }
 
         public IEnumerable<OpeningHour> OpeningHours { get; set; }
 

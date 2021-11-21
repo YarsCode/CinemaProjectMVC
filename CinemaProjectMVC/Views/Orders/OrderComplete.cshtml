@@ -1,0 +1,18 @@
+﻿@model CinemaProjectMVC.Models.Order
+
+<div class="completed-order-modal-container">
+    <div class="completed-order-modal-content">
+        <h1>Thank you for your order!</h1>
+        <div id="completed-order-details" class="completed-order-details">
+            <p>Cinema: @Model.Screening.Cinema.Name</p>
+            <p>Movie: @Model.Screening.Movie.Name</p>
+            <p>At: @Model.Screening.Date</p>
+            <p>Total Price: @Model.TotalPrice₪</p>
+        </div>
+
+        @using (Html.BeginForm("", ""))
+        {
+            <button class="return-homepage-btn">Return to Homepage</button>
+        }
+    </div>
+</div>

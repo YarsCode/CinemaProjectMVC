@@ -10,9 +10,13 @@ namespace CinemaProjectMVC.Models
     {
         public int Id { get; set; }
 
-        public int CinemaId { get; set; }
+        public int? CinemaId { get; set; }
 
         public Cinema Cinema { get; set; }
+
+        public int? ScreeningId { get; set; }
+
+        public Screening Screening{ get; set; }
 
         //public byte ScreeningId { get; set; }
 

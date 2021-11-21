@@ -17,8 +17,8 @@ namespace CinemaProjectMVC
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Orders", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}/{NumberOfTicketsOrdered}",
+                defaults: new { controller = "Orders", action = "Index", id = UrlParameter.Optional, NumberOfTicketsOrdered = UrlParameter.Optional }
             );
         }
     }

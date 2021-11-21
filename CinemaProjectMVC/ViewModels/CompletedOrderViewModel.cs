@@ -6,8 +6,10 @@ using System.Web;
 
 namespace CinemaProjectMVC.ViewModels
 {
-    public class SeatsViewModel
+    public class CompletedOrderViewModel
     {
-        //public IEnumerable<Seat> NumberOfSeats { get; set; }
+        public Screening Screening { get; set; }
+
+
     }
 }

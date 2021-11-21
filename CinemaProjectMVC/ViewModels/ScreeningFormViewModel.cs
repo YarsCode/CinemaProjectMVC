@@ -26,10 +26,12 @@ namespace CinemaProjectMVC.ViewModels
         [Required]
         public DateTime Date { get; set; }
 
-        [Required]
-        [Display(Name = "Available Seats")]
-        [ValidNumberOfSeats]
-        public int AvailableSeatsNumber { get; set; }
+        //[Required]
+        //[Display(Name = "Available Seats")]
+        ////[ValidNumberOfSeats]
+        //public int AvailableSeats { get; set; }
+
+        public List<Seat> Seats { get; set; }
 
         //[Required]
         //[Display(Name = "Available Seats")]
@@ -59,7 +61,6 @@ namespace CinemaProjectMVC.ViewModels
             MovieId = screening.MovieId;
             Date = screening.Date;
             //AvailableSeats = screening.AvailableSeats;
-            AvailableSeatsNumber = screening.AvailableSeatsNumber;
             Price = screening.Price;
         }
     }

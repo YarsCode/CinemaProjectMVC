@@ -22,7 +22,7 @@ namespace CinemaProjectMVC.Models
         [Display(Name = "Total Number of Seats")]
         public int NumberOfSeats { get; set; }
 
-        public List<Seat> Seats { get; set; }
+        //public List<Seat> Seats { get; set; }
 
         public OpeningHour OpeningHour { get; set; }
 
@@ -36,7 +36,7 @@ namespace CinemaProjectMVC.Models
         [Display(Name = "Closes At")]
         public byte ClosingHourId { get; set; }
 
-        public Cinema() { }
+        //public Cinema() { }
 
         //public Cinema(int id, string name, string address, int numberOfSeats, OpeningHour openingHour, ClosingHour closingHour, byte openingHourId, byte closingHourId)
         //{

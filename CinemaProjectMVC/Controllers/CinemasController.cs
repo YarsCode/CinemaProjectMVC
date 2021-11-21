@@ -73,18 +73,21 @@ namespace CinemaProjectMVC.Controllers
 
             if (cinema.Id == 0)
             {
-                cinema.Seats = SetSeats(cinema);
+                //cinema.Seats = SetSeats(cinema);
                 _context.Cinemas.Add(cinema);
             }
             else
             {
-                var cinemaInDb = _context.Cinemas.Include(c => c.Seats).Single(c => c.Id == cinema.Id);
-                cinemaInDb.Seats.Clear();
+                var cinemaInDb = _context.Cinemas.Single(c => c.Id == cinema.Id);
+                var seatsInDb = _context.Seats.Where(s => s.CinemaId == cinema.Id).ToList();
+
+                //foreach (var seat in seatsInDb)
+                //    _context.Seats.Remove(seat);
 
                 cinemaInDb.Name = cinema.Name;
                 cinemaInDb.Address = cinema.Address;
                 cinemaInDb.NumberOfSeats = cinema.NumberOfSeats;
-                cinemaInDb.Seats = SetSeats(cinemaInDb);
+                //cinemaInDb.Seats = SetSeats(cinemaInDb);
                 cinemaInDb.OpeningHourId = cinema.OpeningHourId;
                 cinemaInDb.ClosingHourId = cinema.ClosingHourId;
             }
@@ -120,17 +123,13 @@ namespace CinemaProjectMVC.Controllers
         public ActionResult Delete(int id)
         {
             var cinemaInDb = _context.Cinemas.SingleOrDefault(c => c.Id == id);
-
-            //cinemaInDb.TotalSeats = new List<Seat>();
-
-            //foreach (var seat in cinemaInDb.TotalSeats)
-            //{
-            //    _context.Seats.Remove(seat);
-            //    _context.SaveChanges();
-            //};
+            //var seatsInDb = _context.Seats.Where(s => s.CinemaId == cinemaInDb.Id).ToList();
 
             if (cinemaInDb == null)
                 return HttpNotFound();
+
+            //foreach (var seat in seatsInDb)
+            //    _context.Seats.Remove(seat);
 
             _context.Cinemas.Remove(cinemaInDb);
             _context.SaveChanges();
@@ -138,29 +137,29 @@ namespace CinemaProjectMVC.Controllers
             return RedirectToAction("Index", "Cinemas");
         }
 
-        public List<Seat> SetSeats(Cinema cinema)
-        {
-            List<Seat> Seats = new List<Seat>();
-            char rowLetter = 'A';
-            int seatNumInRow = 1;
-            for (int i = 1; i <= cinema.NumberOfSeats; i++, seatNumInRow++)
-            {
-                Seats.Add(new Seat
-                {
-                    Id = i - 1,
-                    CinemaId = cinema.Id,
-                    Cinema = cinema,
-                    Location = "" + rowLetter + seatNumInRow,
-                    isAvailable = true
-                });
-                if ((i % 10) == 0)
-                {
-                    rowLetter++;
-                    seatNumInRow = 0;
-                }
-            };
-            return Seats;
-        }
+        //public List<Seat> SetSeats(Cinema cinema)
+        //{
+        //    List<Seat> Seats = new List<Seat>();
+        //    char rowLetter = 'A';
+        //    int seatNumInRow = 1;
+        //    for (int i = 1; i <= cinema.NumberOfSeats; i++, seatNumInRow++)
+        //    {
+        //        Seats.Add(new Seat
+        //        {
+        //            Id = i - 1,
+        //            CinemaId = cinema.Id,
+        //            Cinema = cinema,
+        //            Location = "" + rowLetter + seatNumInRow,
+        //            isAvailable = true
+        //        });
+        //        if ((i % 10) == 0)
+        //        {
+        //            rowLetter++;
+        //            seatNumInRow = 0;
+        //        }
+        //    };
+        //    return Seats;
+        //}
 
         //public List<int> SetSeats(int totalSeatsNumber)
         //{
