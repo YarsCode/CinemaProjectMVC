@@ -9,6 +9,7 @@ using CinemaProjectMVC.ViewModels;
 
 namespace CinemaProjectMVC.Controllers
 {
+    [Authorize]
     public class MoviesController : Controller
     {
         private ApplicationDbContext _context;

@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="display: flex;">
+<div class="title">
     <h2>Cinemas</h2>
 
     <p style="padding: 10px; margin: auto 5%;">
@@ -38,15 +38,8 @@
                 <td>@Html.ActionLink(@cinema.Name, "Edit", "Cinemas", new { id = @cinema.Id }, null)</td>
                 <td>@cinema.Address</td>
                 <td>@cinema.NumberOfSeats</td>
-                @*@foreach (var seat in cinema.TotalSeats)
-                {
-                    <td>@seat.Location</td>
-                }*@
                 <td>@cinema.OpeningHour.Time.ToShortTimeString()</td>
                 <td>@cinema.ClosingHour.Time.ToShortTimeString()</td>
-                @*<td>
-                    <button class="btn-link js-delete">Delete</button>
-                </td>*@
             </tr>
 
         }

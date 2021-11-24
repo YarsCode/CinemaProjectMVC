@@ -18,8 +18,6 @@ namespace CinemaProjectMVC.Models
 
         public Screening Screening{ get; set; }
 
-        //public byte ScreeningId { get; set; }
-
         [Required]
         public string Location { get; set; }
 

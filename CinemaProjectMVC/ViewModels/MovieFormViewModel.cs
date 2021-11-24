@@ -9,7 +9,6 @@ namespace CinemaProjectMVC.ViewModels
 {
     public class MovieFormViewModel
     {
-        //public List<Movie> Movies;
         public int? Id { get; set; }
 
         public IEnumerable<Genre> Genres { get; set; }

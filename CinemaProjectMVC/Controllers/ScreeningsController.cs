@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CinemaProjectMVC.Controllers
 {
+    [Authorize]
     public class ScreeningsController : Controller
     {
         private ApplicationDbContext _context;

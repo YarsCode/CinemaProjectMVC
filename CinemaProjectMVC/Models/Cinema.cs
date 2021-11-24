@@ -35,20 +35,5 @@ namespace CinemaProjectMVC.Models
         [Required]
         [Display(Name = "Closes At")]
         public byte ClosingHourId { get; set; }
-
-        //public Cinema() { }
-
-        //public Cinema(int id, string name, string address, int numberOfSeats, OpeningHour openingHour, ClosingHour closingHour, byte openingHourId, byte closingHourId)
-        //{
-        //    Id = id;
-        //    Name = name;
-        //    Address = address;
-        //    NumberOfSeats = numberOfSeats;
-        //    //TotalSeats = SetSeats(totalSeatsNumber);
-        //    OpeningHour = openingHour;
-        //    OpeningHourId = openingHourId;
-        //    ClosingHour = closingHour;
-        //    ClosingHourId = closingHourId;
-        //}
     }
 }

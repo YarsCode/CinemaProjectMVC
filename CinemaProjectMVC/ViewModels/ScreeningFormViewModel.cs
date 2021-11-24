@@ -26,16 +26,7 @@ namespace CinemaProjectMVC.ViewModels
         [Required]
         public DateTime Date { get; set; }
 
-        //[Required]
-        //[Display(Name = "Available Seats")]
-        ////[ValidNumberOfSeats]
-        //public int AvailableSeats { get; set; }
-
         public List<Seat> Seats { get; set; }
-
-        //[Required]
-        //[Display(Name = "Available Seats")]
-        //public List<Seat> AvailableSeats { get; set; }
 
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Please enter valid number")]
@@ -60,7 +51,6 @@ namespace CinemaProjectMVC.ViewModels
             CinemaId = screening.CinemaId;
             MovieId = screening.MovieId;
             Date = screening.Date;
-            //AvailableSeats = screening.AvailableSeats;
             Price = screening.Price;
         }
     }

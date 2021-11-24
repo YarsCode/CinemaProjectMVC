@@ -35,17 +35,6 @@
         @Html.ValidationMessageFor(c => c.ClosingHourId)
     </div>
 
-    @*<p>
-            @{
-                string startTime = "7:00 AM";
-                string endTime = "2:00 PM";
-
-                TimeSpan duration = DateTime.Parse(endTime).Subtract(DateTime.Parse(startTime));
-                @duration
-            }
-
-        </p>*@
-
     @Html.HiddenFor(c => c.Id)
     @Html.AntiForgeryToken()
     <button type="submit" class="button">Save</button>
@@ -53,25 +42,4 @@
      {
         @Html.ActionLink("Delete", "Delete", "Cinemas", new { id = Model.Id}, new { @class = "button" })
      }
-}
-
-@section scripts
-{
-    @Scripts.Render("~/bundles/jqueryval")
-
-    @*<script>
-            $(document).ready(function () {
-                $(".js-delete").on("click", function () {
-                    if (confirm("Are you sure you want to delete?")) {
-                        $.ajax({
-                            url: "/cinemas/delete/" + $(this).attr("id"),
-                            method: "DELETE",
-                            success: function () {
-                                console.log("Success!");
-                            }
-                        });
-                    }
-                });
-            });
-        </script>*@
 }

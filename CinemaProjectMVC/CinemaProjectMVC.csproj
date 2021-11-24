@@ -253,7 +253,6 @@
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ScreeningsController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -405,6 +404,10 @@
     <Compile Include="Migrations\202111210931194_AddPropertyChosenSeatsToOrderModel.Designer.cs">
       <DependentUpon>202111210931194_AddPropertyChosenSeatsToOrderModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111240804324_SeedUsers.cs" />
+    <Compile Include="Migrations\202111240804324_SeedUsers.Designer.cs">
+      <DependentUpon>202111240804324_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cinema.cs" />
@@ -418,12 +421,10 @@
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Screening.cs" />
     <Compile Include="Models\Seat.cs" />
-    <Compile Include="Models\ValidNumberOfSeats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ChooseCinemasViewModel.cs" />
     <Compile Include="ViewModels\CinemaFormViewModel.cs" />
-    <Compile Include="ViewModels\CompletedOrderViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\OrderFormViewModel.cs" />
     <Compile Include="ViewModels\ScreeningFormViewModel.cs" />
@@ -498,9 +499,7 @@
     <Content Include="Views\Screenings\ScreeningForm.cshtml" />
     <Content Include="Views\Orders\OrderForm.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Orders\SeatSelection.cshtml" />
-    <Content Include="Views\Orders\Test.cshtml" />
     <Content Include="Views\Orders\OrderComplete.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -630,6 +629,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111210931194_AddPropertyChosenSeatsToOrderModel.resx">
       <DependentUpon>202111210931194_AddPropertyChosenSeatsToOrderModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111240804324_SeedUsers.resx">
+      <DependentUpon>202111240804324_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

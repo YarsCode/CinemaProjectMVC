@@ -53,7 +53,6 @@ namespace CinemaProjectMVC.Controllers
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
         public ActionResult Save(Order order)
         {
             var screeningInDb = _context.Screenings.Include(s => s.Seats).Single(s => s.Id == order.ScreeningId);
@@ -68,19 +67,6 @@ namespace CinemaProjectMVC.Controllers
             order.Screening = screeningInDb;
             order.Screening.Cinema = _context.Cinemas.Single(c => c.Id == order.Screening.CinemaId);
             order.Screening.Movie = _context.Movies.Single(m => m.Id == order.Screening.MovieId);
-            //if (!ModelState.IsValid)
-            //{
-            //    var cinemas = _context.Cinemas.ToList();
-            //    var movies = _context.Movies.ToList();
-
-            //    var viewModel = new ScreeningFormViewModel
-            //    {
-            //        Cinemas = cinemas,
-            //        Movies = movies,
-            //        Date = DateTime.Now
-            //    };
-            //    return View("CinemaForm", viewModel);
-            //}
 
             _context.SaveChanges();
 
@@ -88,51 +74,11 @@ namespace CinemaProjectMVC.Controllers
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public ActionResult OrderData(Order order)
-        {
-            var screeningInDb = _context.Screenings.Include(s => s.Seats).Single(s => s.Id == order.ScreeningId);
-
-            //var viewModel = new SeatSelectionViewModel
-            //{
-            //    Seats = screeningInDb.Seats,
-            //    NumberOfTicketsOrdered = order.NumberOfTicketsOrdered
-            //};
-
-            //var result = new { redirectToUrl = Url.Action("SeatSelection", "Orders", new { id = order.ScreeningId }), order };
-
-            return Json(order);
-        }
-
-        [HttpPost]
         public ActionResult SeatSelection(Screening screening)
         {
             var screeningInDb = _context.Screenings.Include(s => s.Seats).Single(s => s.Id == screening.Id);
 
-            //var viewModel = new SeatSelectionViewModel
-            //{
-            //    Seats = screeningInDb.Seats,
-            //    NumberOfTicketsOrdered = order.NumberOfTicketsOrdered
-            //};
-
             return View(screeningInDb);
-        }
-
-        public ActionResult Test(int id, Order order)
-        {
-
-            //var order = JsonSerializer.Deserialize<Order>(test);
-
-            //var screeningInDb = _context.Screenings.Include(s => s.Seats).Single(s => s.Id == order.Id);
-
-
-            //var viewModel = new SeatSelectionViewModel
-            //{
-            //    Seats = screeningInDb.Seats,
-            //    NumberOfTicketsOrdered = order.NumberOfTicketsOrdered
-            //};
-
-            return View();
         }
     }
 }

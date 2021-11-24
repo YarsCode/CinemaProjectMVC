@@ -23,8 +23,6 @@ namespace CinemaProjectMVC.ViewModels
         [Display(Name = "Total Seats")]
         public int NumberOfSeats { get; set; }
 
-        //public List<Seat> Seats { get; set; }
-
         public IEnumerable<OpeningHour> OpeningHours { get; set; }
 
         [Required]
@@ -56,7 +54,6 @@ namespace CinemaProjectMVC.ViewModels
             Name = cinema.Name;
             Address = cinema.Address;
             NumberOfSeats = cinema.NumberOfSeats;
-            //Seats = cinema.Seats;
             OpeningHourId = cinema.OpeningHourId;
             ClosingHourId = cinema.ClosingHourId;            
         }

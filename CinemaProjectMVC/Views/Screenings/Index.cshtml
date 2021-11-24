@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="display: flex;">
+<div class="title">
     <h2>Screenings</h2>
 
     <p style="padding: 10px; margin: auto 5%;">
@@ -18,7 +18,6 @@
             <th>Cinema</th>
             <th>Movie</th>
             <th>Date</th>
-            <th>Available Seats</th>
             <th>Price</th>
         </tr>
     </thead>
@@ -37,11 +36,6 @@
         <td>@Html.ActionLink(@screening.Cinema.Name, "Edit", "Screenings", new { id = @screening.Id }, null)</td>
         <td>@screening.Movie.Name</td>
         <td>@screening.Date.ToString("d MMM yyyy, HH:mm")</td>
-        <td>@screening.Seats</td>
-        @{
-            @*var availableSeats = @screening.AvailableSeatsNumber - screening.AvailableSeats.FindAll(s => !s.isAvailable).Count;
-            <td>@availableSeats</td>*@
-        }
         <td>@screening.Price₪</td>
     </tr>
 

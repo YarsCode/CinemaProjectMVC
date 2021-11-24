@@ -42,15 +42,3 @@
         @Html.ActionLink("Delete", "Delete", "Movies", new { id = Model.Id }, new { @class = "button" })
     }
 }
-
-@section scripts
-{
-    @Scripts.Render("~/bundles/jqueryval")
-}
-
-@*@@{
-        var totalMinutes = 90;
-        var one = totalMinutes / 60;
-        var two = totalMinutes % 60;
-        <p>@one ||||| @two</p>
-    }*@

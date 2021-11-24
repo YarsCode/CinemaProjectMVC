@@ -5,11 +5,6 @@
 }
 @{ 
     var Screenings = Model.Screenings;
-    //AjaxOptions ajaxOptions = new AjaxOptions
-    //{
-    //    HttpMethod = "POST",
-    //    InsertionMode = InsertionMode.Replace,
-    //};
 }
 
 <h2>Buy Tickets</h2>
@@ -19,9 +14,8 @@
         <tr>
             <th>Movie</th>
             <th>Date</th>
-            @*<th>Tickets</th>*@
             <th>Price</th>
-            <th>Order Now!</th>
+            <th>Seat Selection</th>
         </tr>
     </thead>
     <tbody>
@@ -33,92 +27,25 @@
                 </tr>
             }
         }
-        @*@{
-            var row = 1;
-        }*@
         @foreach (var screening in Screenings)
         {
-            //var rowId = "row" + row;
             using (@Html.BeginForm("SeatSelection", "Orders", FormMethod.Post, new { id = screening.Id }))
             {
                 @Html.ValidationSummary(true, "Please fix the following errors.")
-                //System.Diagnostics.Debug.WriteLine(row);
                 <tr id="form-@screening.Id">
 
                     <td>@screening.Movie.Name</td>
 
                     <td>@screening.Date.ToString("d MMM yyyy, HH:mm")</td>
 
-                    @*<td>
-                        @Html.TextBoxFor(s => Model.TicketsOrdered, new { @Id = "number-of-tickets", @type = "number", @Name = screening.Price, Value = "1" })
-                        @Html.ValidationMessageFor(s => Model.TicketsOrdered)
-                    </td>*@
                     <td id="price-@screening.Price">@screening.Price₪</td>
-                    @*<td>@Html.ActionLink("Choose your seats", "SeatSelection", "Orders", new { id = screening.Id }, null)</td>*@
+
                     <td><button type="submit" class="redirect-to-seatselection-button" id="submit-@screening.Id">Select your seats</button></td>
-                    @*<td><button type="submit" class="order-now-button" id="submit" + @row>Order Now</button></td>*@
                 </tr>
-                //var id = screening.Id;
+
                 @Html.HiddenFor(s => screening.Id)
                 @Html.AntiForgeryToken()
             }
-            //row++;
         }
     </tbody>
 </table>
-
-@section scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-
-<script>
-    $(document).ready(function () {
-
-        var tickets = document.querySelectorAll("#number-of-tickets");
-
-        $(tickets).change(function (e) {
-            var totalPrice = document.getElementById(e.target.parentElement.nextElementSibling.id);
-            var priceOfOneTicket = parseInt(totalPrice.id.split("price-")[1]);
-            if (e.target.value < 1) {
-                e.target.value = 1
-            }
-
-            numberOfTickets = e.target.value;
-            totalPrice.innerHTML = priceOfOneTicket * e.target.value + "₪";
-        });
-
-
-
-        @*$('button').click(function (e) {
-            var submitButtonId = e.target.id;
-            var screeningId = parseInt(submitButtonId.split('submit-')[1]);
-
-            if (submitButtonId) {
-                var screenings = @Html.Raw(Json.Encode(Model.Screenings));
-                var selectedScreening = screenings.find(screening => screening.Id === screeningId);
-                var form = document.getElementById("form-" + selectedScreening.Id);
-
-                var orderData = new Object();
-                orderData.ScreeningId = selectedScreening.Id;
-                orderData.NumberOfTicketsOrdered = form.querySelectorAll("td > #number-of-tickets")[0].value;
-                orderData.TotalPrice = selectedScreening.Price * orderData.NumberOfTicketsOrdered;
-
-
-                $.ajax({
-                    type: "POST",
-                    url: '@Url.Action("SeatSelection", "Orders")',
-                    contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(orderData),
-                    success: function () {
-                        //alert(orderData.screeningId);
-                        window.location.href = `/Orders/SeatSelection/97/3`;
-                    },
-                    error: function (xhr, status, error) {
-                        //System.Diagnostics.Debug.WriteLine("sdfsdfs");
-                        alert(status);
-                    }
-                });
-            };
-        });*@
-    });
-</script>
-}

@@ -23,10 +23,6 @@ namespace CinemaProjectMVC.Models
         [Required]
         public DateTime Date { get; set; }
 
-        //[Required]
-        //[Display(Name = "Available Seats")]
-        //[ValidNumberOfSeats]
-        //public int AvailableSeats { get; set; }
         public List<Seat> Seats { get; set; }
 
         [Required]
@@ -34,11 +30,6 @@ namespace CinemaProjectMVC.Models
         public int Price { get; set; }
 
         public Screening() { }
-
-        //public Screening(int availableSeatsNumber)
-        //{
-        //    AvailableSeats = new List<Seat>(new Seat[availableSeatsNumber]);
-        //}
 
         public Screening(int id, Cinema cinema, Movie movie, byte cinemaId, byte movieId, DateTime date, int price)
         {
@@ -48,7 +39,6 @@ namespace CinemaProjectMVC.Models
             CinemaId = cinemaId;
             MovieId = movieId;
             Date = date;
-            //AvailableSeats = availableSeatsNumber;
             Price = price;
         }
     }

@@ -9,11 +9,11 @@
 <div class="seating-instructions-container">
     <div class="seating-instructions">
         <div class="green-instruction">
-            <p class="instructions-font">Available Seat - </p>
-            <p style="background: #52b788; " class="instruction-color-box"></p>
+            <p class="instructions-text">Available Seat - </p>
+            <p style="background: #52b788;" class="instruction-color-box"></p>
         </div>
         <div class="red-instruction">
-            <p class="instructions-font">Booked Seat - </p>
+            <p class="instructions-text">Booked Seat - </p>
             <p style="background: #ef476f;" class="instruction-color-box"></p>
         </div>
     </div>
@@ -49,9 +49,6 @@
 </div>
 
 <button id="order-button" class="order-button" type="submit">Make a Reservation</button>
-
-@*<div>@Html.Partial("OrderComplete")</div>*@
-
 
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -30,33 +30,46 @@ textarea {
 }
 
 .button {
-    color: black;
     text-decoration: none;
-    background: #f5821e;
+    background: #7b2cbf;
+    color: #fefae0;
     border: none;
     padding: 8px 20px;
     font-weight: bold;
     border-radius: 3px;
 }
 
-    .button:hover, .order-now-button:hover {
-    color: black;
+.button:hover, .order-now-button:hover {
+    background: #7b2cbf;
+    color: #fefae0;
+    opacity: 0.9;
     text-decoration: none;
-    background: #dc751b;
 }
 
-thead th {    
-    color: #ff9940;
+thead th {
+    color: #f0efeb;
+    font-weight: bold;
+    text-shadow: white 0px 0px 80px;
     background: #484a49;
 }
 
 tbody td {
     background: #dedede;
+    text-align: center;
 }
 
 tbody a {
     padding: 5px;
-    color: #f5821e;
+    color: #7b2cbf;
+}
+
+.title {
+    display: flex;
+    margin: 20px;
+}
+
+.title p {
+    display: flex;
 }
 
 .field-validation-error,
@@ -96,16 +109,16 @@ input.error {
     height: 100%;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     padding: 70px 5px;
-    background: rgb(168,27,255);
-    background: linear-gradient(150deg, rgba(168,27,255,0.8) 0%, rgba(255,153,64,0.8270658605238971) 35%, rgba(25,0,32,0.8) 67%, rgba(0,0,0,0.7990546560421043) 100%);
+    background: rgb(118,0,150);
+    background: linear-gradient(27deg, rgba(118,0,150,0.9054972330729166) 65%, rgba(0,0,0,0.6758053563222164) 92%);
 }
 
-.cinemas__card p {
+.cinemas__card p {    
     color: #f9f9f9;
+    text-shadow: white 0px 0px 5px;
     font-size: 24px;
     letter-spacing: 1px;
     text-decoration: none;
@@ -117,40 +130,45 @@ input.error {
 }
 
 .redirect-to-seatselection-button {
-    color: black;
     text-decoration: none;
-    background: #f5821e;
+    background: #7b2cbf;
+    color: #fefae0;
     border: none;
-    padding: 2px 20px;
+    padding: 8px 20px;
     font-weight: bold;
     font-size: 16px;
     border-radius: 3px;
 }
 
-.title-container {
-    display: flex;
-}
+    .redirect-to-seatselection-button:hover {
+        opacity: 0.7;
+    }
+
+    .title-container {
+        display: flex;
+    }
 
 .title-container h1 {
+    font-family: 'Comfortaa', cursive;
+    text-shadow: #495057 0px 0px 4px;
+    letter-spacing: -3px;
     margin: auto;
+    color: #7b2cbf;
     padding: 40px;
     font-weight: bolder;
-    text-shadow: 2px 0px rgba(138, 62, 0, 0.21);
-    background: -webkit-linear-gradient(#a81bff, #ff9a42);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: font-size ease-in-out 0.3s;
     font-size: 60px;
 }
 
 .screen-container {
     display: flex;
-    margin-top: 50px;
     justify-content: center;    
+    margin-top: 50px;
 }
 
 .screen {
     min-width: 60%;
+    display: flex;
+    justify-content: center;
     padding: 150px;
     margin-bottom: 30px;
     border-radius: 0.2em;
@@ -159,34 +177,33 @@ input.error {
 
 .seating-instructions-container {
     position: absolute;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
     font-size: 10px;
-    margin-top: 7%;
+    margin-top: 10%;
 }
 
 .seating-instructions {
     margin-top: 20%;
-    /*padding: 20px;*/
-    /*align-content: center;*/
-    align-items: end;
-    flex-direction: row;
 }
 
 .instruction-color-box {
+    display: inline-block;
     border: 1.5px solid black;
-    align-self: self-end;
     width: 20px;
+    height: 20px;
     padding: 12px;
+    margin-left: 10px;
 }
 
-.instructions-font {
+.instructions-text {
+    float: left;
     font-size: 16px;
     font-weight: 700;
 }
 
 .green-instruction .red-instruction {
-    flex-direction: row;
+    
 }
 
 .seats-container {
@@ -269,9 +286,11 @@ input.error {
 
 .completed-order-modal-content {
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     color: #212529;
     background-color: #95d5b2;
     width: 50%;
@@ -284,4 +303,24 @@ input.error {
     padding: 1em;
     flex-direction: column;
     justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .seating-instructions-container {
+        display: flex;
+        justify-content: center;
+        position:relative;
+    }
+
+    .seats-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .seat {
+        width: 75%;
+    }
+
+    .completed-order-modal-content {
+        width: 70%;
+    }
 }
