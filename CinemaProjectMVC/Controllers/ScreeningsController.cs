@@ -106,13 +106,9 @@ namespace CinemaProjectMVC.Controllers
         public ActionResult Delete(int id)
         {
             var screeningInDb = _context.Screenings.SingleOrDefault(s => s.Id == id);
-            var seatsInDb = _context.Seats.Where(s => s.ScreeningId == screeningInDb.Id).ToList();
 
             if (screeningInDb == null)
                 return HttpNotFound();
-
-            foreach (var seat in seatsInDb)
-                _context.Seats.Remove(seat);
 
             _context.Screenings.Remove(screeningInDb);
             _context.SaveChanges();

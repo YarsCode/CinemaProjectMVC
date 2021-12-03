@@ -1,8 +1,7 @@
-﻿/** {
-    font-family: 'Manrope', sans-serif;
-    font-size: large;
-}*/
-body {
+﻿* {
+    box-sizing: border-box;
+}
+body {    
     font-family: 'Manrope', sans-serif;
     font-size: large;
     padding-top: 50px;
@@ -31,7 +30,7 @@ textarea {
 
 .button {
     text-decoration: none;
-    background: #7b2cbf;
+    background: #9d4edd;
     color: #fefae0;
     border: none;
     padding: 8px 20px;
@@ -60,7 +59,7 @@ tbody td {
 
 tbody a {
     padding: 5px;
-    color: #7b2cbf;
+    color: #9d4edd;
 }
 
 .title {
@@ -113,7 +112,8 @@ input.error {
     text-align: center;
     padding: 70px 5px;
     background: rgb(118,0,150);
-    background: linear-gradient(27deg, rgba(118,0,150,0.9054972330729166) 65%, rgba(0,0,0,0.6758053563222164) 92%);
+    background: linear-gradient(27deg, rgba(118,0,150,0.7) 65%, #9d4edd 92%);
+    /*background: #9d4edd;*/
 }
 
 .cinemas__card p {    
@@ -131,7 +131,7 @@ input.error {
 
 .redirect-to-seatselection-button {
     text-decoration: none;
-    background: #7b2cbf;
+    background: #9d4edd;
     color: #fefae0;
     border: none;
     padding: 8px 20px;
@@ -140,23 +140,25 @@ input.error {
     border-radius: 3px;
 }
 
-    .redirect-to-seatselection-button:hover {
-        opacity: 0.7;
-    }
+.redirect-to-seatselection-button:hover {
+    opacity: 0.7;
+}
 
-    .title-container {
-        display: flex;
-    }
+.title-container {
+    display: flex;
+}
 
 .title-container h1 {
     font-family: 'Comfortaa', cursive;
-    text-shadow: #495057 0px 0px 4px;
+    text-shadow: #6d6875 0px 3px 2px;
     letter-spacing: -3px;
-    margin: auto;
-    color: #7b2cbf;
+    /*margin: auto;*/
+    color: #9d4edd;
     padding: 40px;
     font-weight: bolder;
-    font-size: 60px;
+    font-size: 10rem;
+    text-align: center;
+    width: 100%;
 }
 
 .screen-container {
@@ -198,12 +200,13 @@ input.error {
 
 .instructions-text {
     float: left;
+    display: inline-block;
     font-size: 16px;
     font-weight: 700;
 }
 
 .green-instruction .red-instruction {
-    
+    display: inline-block;
 }
 
 .seats-container {
@@ -255,8 +258,10 @@ input.error {
     margin: 40px auto;
     padding: 20px;
     border-radius: 3px;
-    background: #7b2cbf;
-    color: #fefae0;
+    background: #d9d9d9;
+    color: #495057;
+    /*background: #9d4edd;*/
+    /*color: #fefae0;*/
     transition: ease-in-out 0.1s;
 }
 
@@ -305,7 +310,7 @@ input.error {
     justify-content: center;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     .seating-instructions-container {
         display: flex;
         justify-content: center;
@@ -322,5 +327,15 @@ input.error {
 
     .completed-order-modal-content {
         width: 70%;
+    }
+
+    .cinemas__card {
+        padding: 50px 6px;
+        height: 40%;
+        align-items: center;
+    }
+
+    .title-container h1 {
+        font-size: 7rem;
     }
 }

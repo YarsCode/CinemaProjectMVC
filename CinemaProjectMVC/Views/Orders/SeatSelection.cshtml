@@ -54,47 +54,53 @@
     @Scripts.Render("~/bundles/jqueryval")
 
 <script>
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            $(".seat").click(seat => {
-                if (!seat.target.classList.contains("selected")) {
-                    seat.target.classList.add("selected");
-                } else {
-                    seat.target.classList.remove("selected");
-                };
+        $(".seat").click(seat => {
 
-                $("#num-of-tickets").html("Number of Tickets: " + $(".selected").length);
-                $("#total-price").html("Total: " + $(".selected").length * @Model.Price + "₪");
-            });
+            if (!seat.target.classList.contains("selected")) {
+                seat.target.classList.add("selected");
+                $("#order-button").css({ "background": "#9d4edd", "color": "#fefae0"});
+            } else {
+                seat.target.classList.remove("selected");
+            };
 
-            $("#order-button").click((e) => {
-                var orderData = new Object();
-                var chosenSeatsIDs = [];
+            if ($(".selected").length == 0) {
+                $("#order-button").css({ "background": "#d9d9d9", "color": "#495057"});
+            }
 
-                $(".selected").each((i, seat) => {
-                    chosenSeatsIDs.push(seat.id);
-                });
-
-                orderData.screeningId = @Model.Id
-                orderData.chosenSeats = chosenSeatsIDs;
-                orderData.totalPrice = $(".selected").length * @Model.Price;
-
-                if ($(".selected").length > 0) {
-                    $.ajax({
-                        type: "POST",
-                        url: '@Url.Action("Save", "Orders")',
-                        contentType: "application/json; charset=utf-8",
-                        data: JSON.stringify(orderData),
-                        dataType: 'html',
-                        success: function (modal) {
-                            $("body").append(modal);
-                        },
-                        error: function (xhr, status, error) {
-                            alert(status);
-                        }
-                    });
-                }
-            });
+            $("#num-of-tickets").html("Number of Tickets: " + $(".selected").length);
+            $("#total-price").html("Total: " + $(".selected").length * @Model.Price + "₪");
         });
+
+        $("#order-button").click((e) => {
+            var orderData = new Object();
+            var chosenSeatsIDs = [];
+
+            $(".selected").each((i, seat) => {
+                chosenSeatsIDs.push(seat.id);
+            });
+
+            orderData.screeningId = @Model.Id
+            orderData.chosenSeats = chosenSeatsIDs;
+            orderData.totalPrice = $(".selected").length * @Model.Price;
+
+            if ($(".selected").length > 0) {                    
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Save", "Orders")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(orderData),
+                    dataType: 'html',
+                    success: function (modal) {
+                        $("body").append(modal);
+                    },
+                    error: function (xhr, status, error) {
+                        alert(status);
+                    }
+                });
+            }
+        });
+    });
 </script>
     }
