@@ -265,7 +265,7 @@ input.error {
     transition: ease-in-out 0.1s;
 }
 
-.order-button:hover:enabled {
+.order-button:enabled:hover {
     opacity: 0.7;
     transition: ease-in-out 0.1s;
 }

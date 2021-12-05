@@ -48,7 +48,7 @@
     <p id="total-price">Total: 0₪</p>
 </div>
 
-<button id="order-button" class="order-button" type="submit">Make a Reservation</button>
+<button id="order-button" class="order-button" type="submit" disabled>Make a Reservation</button>
 
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -60,13 +60,15 @@
 
             if (!seat.target.classList.contains("selected")) {
                 seat.target.classList.add("selected");
-                $("#order-button").css({ "background": "#9d4edd", "color": "#fefae0"});
+                $("#order-button").css({ "background": "#9d4edd", "color": "#fefae0" });
+                $("#order-button").removeAttr('disabled');
             } else {
                 seat.target.classList.remove("selected");
             };
 
             if ($(".selected").length == 0) {
-                $("#order-button").css({ "background": "#d9d9d9", "color": "#495057"});
+                $("#order-button").css({ "background": "#d9d9d9", "color": "#495057" });
+                $("#order-button").attr('disabled', 'disabled');
             }
 
             $("#num-of-tickets").html("Number of Tickets: " + $(".selected").length);
